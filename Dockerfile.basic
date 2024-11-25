@@ -1,0 +1,8 @@
+# Basic Dockerfile (No optimization)
+FROM node:18-alpine-slim
+WORKDIR /app
+COPY package.json ./
+RUN npm install --only=production
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]
